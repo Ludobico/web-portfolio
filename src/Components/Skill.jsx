@@ -5,7 +5,9 @@ import { ScrollTrigger } from "gsap/ScrollTrigger";
 import { useEffect } from "react";
 
 const Skill = () => {
-  gsap.registerPlugin(ScrollTrigger);
+  if (typeof window !== "undefined") {
+    gsap.registerPlugin(ScrollTrigger);
+  }
   useEffect(() => {
     const reveal = gsap.utils.toArray(".skill_text");
     reveal.forEach((text, i) => {
@@ -15,6 +17,72 @@ const Skill = () => {
         start: "top 90%",
         end: "top 20%",
         markers: true,
+      });
+    });
+    const skillre = gsap.utils.toArray(".item-text span");
+    skillre.forEach((text, i) => {
+      ScrollTrigger.create({
+        trigger: text,
+        toggleClass: "skillre",
+        start: "top 90%",
+        end: "top 20%",
+        markers: true,
+      });
+    });
+
+    const P90 = gsap.utils.toArray(".progress-bar.w-90");
+    P90.forEach((text, i) => {
+      ScrollTrigger.create({
+        trigger: text,
+        toggleClass: "P90",
+        start: "top 90%",
+        end: "bottom 20%",
+        markers: true,
+        scrub: true,
+      });
+    });
+    const P85 = gsap.utils.toArray(".progress-bar.w-85");
+    P85.forEach((text, i) => {
+      ScrollTrigger.create({
+        trigger: text,
+        toggleClass: "P85",
+        start: "top 90%",
+        end: "bottom 20%",
+        markers: true,
+        scrub: true,
+      });
+    });
+    const P70 = gsap.utils.toArray(".progress-bar.w-70");
+    P70.forEach((text, i) => {
+      ScrollTrigger.create({
+        trigger: text,
+        toggleClass: "P70",
+        start: "top 90%",
+        end: "bottom 20%",
+        markers: true,
+        scrub: true,
+      });
+    });
+    const P60 = gsap.utils.toArray(".progress-bar.w-60");
+    P60.forEach((text, i) => {
+      ScrollTrigger.create({
+        trigger: text,
+        toggleClass: "P60",
+        start: "top 90%",
+        end: "bottom 20%",
+        markers: true,
+        scrub: true,
+      });
+    });
+    const P55 = gsap.utils.toArray(".progress-bar.w-55");
+    P55.forEach((text, i) => {
+      ScrollTrigger.create({
+        trigger: text,
+        toggleClass: "P55",
+        start: "top 90%",
+        end: "bottom 20%",
+        markers: true,
+        scrub: true,
       });
     });
   }, []);
