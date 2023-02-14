@@ -1,7 +1,24 @@
 import React from "react";
 import "../Static/Skill.css";
+import gsap from "gsap";
+import { ScrollTrigger } from "gsap/ScrollTrigger";
+import { useEffect } from "react";
 
 const Skill = () => {
+  gsap.registerPlugin(ScrollTrigger);
+  useEffect(() => {
+    const reveal = gsap.utils.toArray(".skill_text");
+    reveal.forEach((text, i) => {
+      ScrollTrigger.create({
+        trigger: text,
+        toggleClass: "active",
+        start: "top 90%",
+        end: "top 20%",
+        markers: true,
+      });
+    });
+  }, []);
+
   return (
     <div className="Skill_top_div">
       <section className="skills container">
