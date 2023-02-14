@@ -1,0 +1,119 @@
+.Skill_top_div {
+  width: 70vw;
+  height: 100vh;
+  margin: 0 auto;
+}
+.title {
+  top: 5%;
+  position: relative;
+}
+.title > h2 {
+  font-size: 3rem;
+  font-family: "Poppins", sans-serif;
+  text-align: center;
+  text-transform: capitalize;
+  font-weight: 900;
+  color: #252525;
+}
+.title div {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  text-align: center;
+  width: 100%;
+  transform: translate(-50%, -50%);
+}
+.title div h2 {
+  text-transform: capitalize;
+  font-size: 2rem;
+  font-family: "Poppins", sans-serif;
+  font-weight: 800;
+}
+@media screen and (min-width: 500px) {
+  .title > h2 {
+    font-size: 6rem;
+  }
+  .title div h2 {
+    font-size: 3rem;
+  }
+}
+
+.skills {
+  margin: 0;
+  padding: 0;
+}
+
+.skills > .skill_text {
+  width: 70%;
+  margin: 0 auto;
+  text-align: center;
+}
+
+.skills .row {
+  margin: 0;
+}
+
+.skills .item {
+  padding: 0.5rem 12rem;
+  margin: 0;
+}
+
+.skills .item-text {
+  display: flex;
+  justify-content: flex-start;
+  font-weight: 600;
+  font-size: 1.3rem;
+  position: relative;
+}
+
+.skills .item-text span:last-child {
+  position: absolute;
+}
+
+.skills .item-text .w-90 {
+  margin-left: 85%;
+}
+.skills .item-text .w-85 {
+  margin-left: 80%;
+}
+.skills .item-text .w-70 {
+  margin-left: 75%;
+}
+.skills .item-text .w-60 {
+  margin-left: 65%;
+}
+.skills .item-text .w-55 {
+  margin-left: 60%;
+}
+
+.progress {
+  margin: 0.8rem 0;
+  border-radius: 10px;
+  height: 16px;
+  width: 100%;
+  background-color: gray;
+  overflow: hidden;
+}
+
+.progress-bar {
+  height: 100%;
+  border-top-right-radius: 2px;
+  border-bottom-right-radius: 2px;
+  background-color: greenyellow;
+}
+
+.progress-bar.w-90 {
+  width: 85%;
+}
+.progress-bar.w-85 {
+  width: 80%;
+}
+.progress-bar.w-70 {
+  width: 75%;
+}
+.progress-bar.w-60 {
+  width: 65%;
+}
+.progress-bar.w-55 {
+  width: 60%;
+}
