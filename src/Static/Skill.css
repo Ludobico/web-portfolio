@@ -4,7 +4,6 @@
   margin: 0 auto;
 }
 .title {
-  top: 5%;
   position: relative;
 }
 .title > h2 {
@@ -44,9 +43,11 @@
 }
 
 .skills > .skill_text {
-  width: 70%;
+  width: 40vw;
   margin: 0 auto;
   text-align: center;
+  font-weight: 600;
+  margin-bottom: 2rem;
 }
 
 .skills .row {
@@ -64,6 +65,9 @@
   font-weight: 600;
   font-size: 1.3rem;
   position: relative;
+}
+.skills .item-text span {
+  letter-spacing: 2px;
 }
 
 .skills .item-text span:last-child {

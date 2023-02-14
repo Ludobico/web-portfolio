@@ -1,16 +1,25 @@
-import React, { Suspense, useCallback, useMemo, useRef } from "react";
+import React, {
+  Suspense,
+  useCallback,
+  useEffect,
+  useMemo,
+  useRef,
+} from "react";
 import "../Static/Ripple.css";
 import circleImg from "./Asset/circle.png";
-import { Canvas, useFrame, useLoader } from "@react-three/fiber";
+import { Canvas, useFrame, useLoader, useThree } from "@react-three/fiber";
 import * as THREE from "three";
 import {
   OrbitControls,
+  PerspectiveCamera,
   Scroll,
   ScrollControls,
   Text,
   useTexture,
 } from "@react-three/drei";
 import TypeWriterEffect from "react-typewriter-effect";
+import gsap from "gsap";
+import { useState } from "react";
 
 function Points() {
   const imgTex = useLoader(THREE.TextureLoader, circleImg);
@@ -112,6 +121,7 @@ function Intro() {
           typeSpeed={90}
         />
       </div>
+      <div className="Intro_footer"></div>
     </div>
   );
 }

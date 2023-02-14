@@ -3,6 +3,7 @@ import "../Static/Skill.css";
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import { useEffect } from "react";
+import Slide from "react-reveal/Slide";
 
 const Skill = () => {
   if (typeof window !== "undefined") {
@@ -90,12 +91,14 @@ const Skill = () => {
   return (
     <div className="Skill_top_div">
       <section className="skills container">
-        <div className="title">
-          <h2>Skills</h2>
-          <div>
-            <h2>My Skills</h2>
+        <Slide bottom>
+          <div className="title">
+            <h2>Skills</h2>
+            <div>
+              <h2>My Skills</h2>
+            </div>
           </div>
-        </div>
+        </Slide>
         <p className="skill_text">
           웹 개발과 AI개발에 필요한 언어를 공부중입니다.
         </p>
