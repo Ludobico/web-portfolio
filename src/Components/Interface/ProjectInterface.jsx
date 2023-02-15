@@ -20,7 +20,8 @@ import SwarmRough from "../../Static/img/glass_texture/Glass_Window_003_roughnes
 import SwarmAO from "../../Static/img/glass_texture/Glass_Window_003_ambientOcclusion.jpg";
 import Swarmmetal from "../../Static/img/glass_texture/Glass_Window_003_metallic.jpg";
 import { EffectComposer, Bloom } from "@react-three/postprocessing";
-import { VMlightPass } from "./VMlightPass";
+import { VMlightPass_C } from "./VMlightPass_C";
+import { UnrealBloomPass } from "three-stdlib";
 
 function Light() {
   const lightRef = useRef();
@@ -44,6 +45,33 @@ function Light() {
 
 function MouseSpot() {
   const { viewport } = useThree();
+  const vertexShader = `
+      varying vec2 vUv;
+      void main() {
+        vUv = uv;
+        gl_Position = projectionMatrix * modelViewMatrix * vec4(position, 1.0);
+      
+    }`;
+
+  const fragmentShader = `
+      uniform float time;
+      uniform float progress;
+      uniform float radius;
+      uniform vec2 lightPosition;
+      varying vec2 vUv;
+
+      void main() {
+        vec2 p = -1.0 + 2.0 * vUv;
+        float len = length(p);
+
+        float distort = radius * pow(len, 2.0);
+        vec2 uv = vUv + (p / len) * distort * progress;
+
+        float intensity = 1.5 - length(lightPosition - vUv);
+        vec3 color = vec3(1.0, 1.0, 1.0) * pow(intensity, 8.0);
+
+        gl_FragColor = vec4(color, 1.0);
+      }`;
 
   const ref = useRef();
   useFrame(({ mouse }) => {
@@ -56,13 +84,26 @@ function MouseSpot() {
   return (
     <group>
       <mesh ref={ref}>
-        <sphereGeometry args={[0.1, 32, 32]} />
-        <meshBasicMaterial />
+        <sphereBufferGeometry args={[0.1, 32, 32]} />
+        <meshStandardMaterial />
+        {/* <shaderMaterial
+          uniforms={{
+            time: { value: 0 },
+            progress: { value: 0.0 },
+            radius: { value: 0.1 },
+            lightPosition: { value: new THREE.Vector2(0.0, 0.0) },
+          }}
+          vertexShader={vertexShader}
+          fragmentShader={fragmentShader}
+        /> */}
         <directionalLight ref={ref} color="gray" intensity={1} distance={200} />
       </mesh>
       {/* <Effects>
-        <shaderPass args={[VMlightPass]} needsSwap={false} />
+        <shaderPass args={[VMlightPass_C]} needsSwap={false} />
       </Effects> */}
+      <EffectComposer>
+        <Bloom intensity={1.1} />
+      </EffectComposer>
     </group>
   );
 }
@@ -154,9 +195,6 @@ function Swarm({ count }) {
     });
     mesh.current.instanceMatrix.needsUpdate = true;
   });
-  // const roughmap = useTexture(SwarmRough);
-  // const AOmap = useTexture(SwarmAO);
-  // const metalmap = useTexture(Swarmmetal);
   return (
     <>
       <directionalLight ref={light} intensity={2} color="white">
@@ -173,9 +211,9 @@ function Swarm({ count }) {
           normalMap={normal}
           displacementMap={heightmap}
           roughnessMap={roughmap}
-          //   roughness={0.9}
+          // roughness={0.2}
           metalnessMap={metalmap}
-          //   metalness={0.7}
+          // metalness={0.7}
           aoMap={AOmap}
           aoMapIntensity={0.1}
           color={0xffffff}
@@ -185,6 +223,7 @@ function Swarm({ count }) {
     </>
   );
 }
+
 const Scene = () => {
   return (
     <Canvas>

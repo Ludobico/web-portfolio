@@ -3,9 +3,9 @@ import * as THREE from "three";
 export const VMlightPass = {
   uniforms: {
     tDiffuse: { value: null },
-    lightPosition: { value: new THREE.Vector2(0.5, 0.75) },
+    lightPosition: { value: new THREE.Vector2(0.5, 0.5) },
     exposure: { value: 0.3 },
-    decay: { value: 0.95 },
+    decay: { value: 0.75 },
     density: { value: 0.4 },
     weight: { value: 0.3 },
     samples: { value: 50 },
