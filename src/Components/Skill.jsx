@@ -6,9 +6,6 @@ import { useEffect } from "react";
 import Slide from "react-reveal/Slide";
 
 const Skill = () => {
-  if (typeof window !== "undefined") {
-    gsap.registerPlugin(ScrollTrigger);
-  }
   useEffect(() => {
     const reveal = gsap.utils.toArray(".skill_text");
     reveal.forEach((text, i) => {
@@ -17,7 +14,6 @@ const Skill = () => {
         toggleClass: "active",
         start: "top 90%",
         end: "top 20%",
-        markers: true,
       });
     });
     const skillre = gsap.utils.toArray(".item-text span");
@@ -27,7 +23,6 @@ const Skill = () => {
         toggleClass: "skillre",
         start: "top 90%",
         end: "top 20%",
-        markers: true,
       });
     });
 
@@ -38,7 +33,6 @@ const Skill = () => {
         toggleClass: "P90",
         start: "top 90%",
         end: "bottom 20%",
-        markers: true,
         scrub: true,
       });
     });
@@ -49,7 +43,6 @@ const Skill = () => {
         toggleClass: "P85",
         start: "top 90%",
         end: "bottom 20%",
-        markers: true,
         scrub: true,
       });
     });
@@ -60,7 +53,6 @@ const Skill = () => {
         toggleClass: "P70",
         start: "top 90%",
         end: "bottom 20%",
-        markers: true,
         scrub: true,
       });
     });
@@ -71,7 +63,6 @@ const Skill = () => {
         toggleClass: "P60",
         start: "top 90%",
         end: "bottom 20%",
-        markers: true,
         scrub: true,
       });
     });
@@ -82,7 +73,6 @@ const Skill = () => {
         toggleClass: "P55",
         start: "top 90%",
         end: "bottom 20%",
-        markers: true,
         scrub: true,
       });
     });

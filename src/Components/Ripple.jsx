@@ -7,6 +7,7 @@ import React, {
 } from "react";
 import "../Static/Ripple.css";
 import circleImg from "./Asset/circle.png";
+import lightImg from "../Static/img/light_texture.png";
 import { Canvas, useFrame, useLoader, useThree } from "@react-three/fiber";
 import * as THREE from "three";
 import {
@@ -22,7 +23,7 @@ import gsap from "gsap";
 import { useState } from "react";
 
 function Points() {
-  const imgTex = useLoader(THREE.TextureLoader, circleImg);
+  const imgTex = useLoader(THREE.TextureLoader, lightImg);
   const bufferRef = useRef();
 
   let t = 0;

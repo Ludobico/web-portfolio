@@ -109,7 +109,7 @@
 .progress-bar.w-90 {
   width: 0%;
   background-color: #00aaff;
-  transition: 3s;
+  transition: 1.5s;
 }
 .progress-bar.w-90.P90 {
   width: 85%;
@@ -118,7 +118,7 @@
 .progress-bar.w-85 {
   width: 0%;
   background-color: #00aaff;
-  transition: 3s;
+  transition: 1.5s;
 }
 .progress-bar.w-85.P85 {
   width: 80%;
@@ -127,7 +127,7 @@
 .progress-bar.w-70 {
   width: 0%;
   background-color: #00aaff;
-  transition: 3s;
+  transition: 1.5s;
 }
 .progress-bar.w-70.P70 {
   width: 75%;
@@ -136,7 +136,7 @@
 .progress-bar.w-60 {
   width: 0%;
   background-color: #00aaff;
-  transition: 3s;
+  transition: 1.5s;
 }
 .progress-bar.w-60.P60 {
   width: 65%;
@@ -145,7 +145,7 @@
 .progress-bar.w-55 {
   width: 0%;
   background-color: #00aaff;
-  transition: 3s;
+  transition: 1.5s;
 }
 .progress-bar.w-55.P55 {
   width: 60%;
