@@ -81,7 +81,7 @@ const Skill = () => {
   return (
     <div className="Skill_top_div">
       <section className="skills container">
-        <Slide bottom>
+        <Slide bottom duration={300} collapse>
           <div className="title">
             <h2>Skills</h2>
             <div>
