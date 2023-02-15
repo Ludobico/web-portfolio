@@ -1,7 +1,8 @@
 .Skill_top_div {
   width: 70vw;
-  height: 100vh;
+  height: 110vh;
   margin: 0 auto;
+  overflow: hidden;
 }
 .title {
   position: relative;

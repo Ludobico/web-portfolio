@@ -5,34 +5,14 @@ import { useFrame } from "@react-three/fiber";
 import * as THREE from "three";
 import { useRef, useState } from "react";
 import { PerspectiveCamera, SpotLight, useTexture } from "@react-three/drei";
-import lightImg from "../../Static/img/blueLight.png";
 import { Lensflare, LensflareElement } from "three-stdlib";
-
-const Lens = () => {
-  const [mouse, setMouse] = useState({ x: 0, y: 0 });
-  const lensflareRef = useRef();
-
-  const handleMouseMove = (e) => {
-    setMouse({ x: e.clientX, y: e.clientY });
-  };
-
-  useFrame(() => {
-    if (lensflareRef.current) {
-      lensflareRef.current.material.uniforms.uMouse.value.x = mouse.x;
-      lensflareRef.current.material.uniforms.uMouse.value.y = mouse.y;
-    }
-  });
-
-  return (
-    <Lensflare ref={lensflareRef} position={[0, 0, -50]}>
-      <LensflareElement
-        position={new THREE.Vector3(0, 0, 0)}
-        color="white"
-        size={50}
-      />
-    </Lensflare>
-  );
-};
+import hexangle from "../../Static/img/flare/hexangle.png";
+import lensflare0 from "../../Static/img/flare/lensflare0.png";
+import lensflare0_alpha from "../../Static/img/flare/lensflare0_alpha.png";
+import lensflare1 from "../../Static/img/flare/lensflare1.png";
+import lensflare2 from "../../Static/img/flare/lensflare2.png";
+import lensflare3 from "../../Static/img/flare/lensflare3.png";
+import Project from "./Project";
 
 function Light() {
   const lightRef = useRef();
@@ -51,7 +31,15 @@ function Light() {
 
 function MouseSpot() {
   const { viewport } = useThree();
-  const imgTex = useTexture(lightImg);
+  const texture = useTexture(lensflare0);
+  const lensflare = new Lensflare();
+  const element = new LensflareElement(
+    texture,
+    500,
+    0,
+    new THREE.Color("white")
+  );
+  lensflare.addElement(element);
 
   const ref = useRef();
   useFrame(({ mouse }) => {
@@ -65,7 +53,7 @@ function MouseSpot() {
     <group>
       <mesh ref={ref}>
         <sphereBufferGeometry args={[0.1, 32, 32]} />
-        <meshBasicMaterial map={imgTex} />
+        <meshBasicMaterial />
         <pointLight ref={ref} color="green" intensity={1} distance={200} />
       </mesh>
     </group>
@@ -84,6 +72,7 @@ const ProjectInterface = () => {
   return (
     <div className="Pin_top_div">
       <Scene />
+      <Project />
     </div>
   );
 };
