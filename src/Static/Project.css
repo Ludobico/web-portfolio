@@ -4,6 +4,8 @@
   top: 10%;
   left: 15%;
   font-family: "GT-Sectra-Fine", "Microsoft Yahei";
+  z-index: 99;
+  pointer-events: none;
 }
 .project_intro1 {
   position: absolute;
@@ -11,6 +13,8 @@
   top: 25%;
   left: 15%;
   font-family: "GT-Sectra-Fine", "Microsoft Yahei";
+  z-index: 99;
+  pointer-events: none;
 }
 .project_intro2 {
   position: absolute;
@@ -18,4 +22,18 @@
   top: 40%;
   left: 15%;
   font-family: "GT-Sectra-Fine", "Microsoft Yahei";
+  z-index: 99;
+  pointer-events: none;
+}
+
+.project_intro_sub {
+  position: absolute;
+  font-size: 1.5em;
+  top: 70%;
+  right: 15%;
+  font-family: "GT-Sectra-Fine", "Microsoft Yahei";
+  z-index: 99;
+  pointer-events: none;
+  letter-spacing: 1.5px;
+  line-height: 60px;
 }

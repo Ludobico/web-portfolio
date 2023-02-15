@@ -54,9 +54,18 @@ function MouseSpot() {
       <mesh ref={ref}>
         <sphereBufferGeometry args={[0.1, 32, 32]} />
         <meshBasicMaterial />
-        <pointLight ref={ref} color="green" intensity={1} distance={200} />
+        <pointLight ref={ref} color="gray" intensity={1} distance={200} />
       </mesh>
     </group>
+  );
+}
+
+function CenterMesh() {
+  return (
+    <mesh position={[0, 0, 0]}>
+      <torusBufferGeometry args={[3, 0.02, 40, 80]} />
+      <meshStandardMaterial color={0xff7f00} metalness={0.9} roughness={0.1} />
+    </mesh>
   );
 }
 const Scene = () => {
@@ -64,6 +73,7 @@ const Scene = () => {
     <Canvas>
       <MouseSpot />
       <Light />
+      <CenterMesh />
     </Canvas>
   );
 };
@@ -71,8 +81,8 @@ const Scene = () => {
 const ProjectInterface = () => {
   return (
     <div className="Pin_top_div">
-      <Scene />
       <Project />
+      <Scene />
     </div>
   );
 };
