@@ -20,7 +20,8 @@
     "react-scripts": "5.0.1",
     "react-text-transition": "^3.0.2",
     "react-typewriter-effect": "^1.1.0",
-    "three": "^0.149.0",
+    "three": "0.148.0",
+    "three-stdlib": "^2.21.8",
     "web-vitals": "^2.1.0",
     "zustand": "^4.3.2"
   },

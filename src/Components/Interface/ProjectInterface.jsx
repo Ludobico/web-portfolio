@@ -5,13 +5,13 @@ import { useFrame } from "@react-three/fiber";
 import * as THREE from "three";
 import { useRef, useState, useMemo } from "react";
 import {
+  Effects,
   Icosahedron,
   PerspectiveCamera,
   SpotLight,
+  useFBO,
   useTexture,
 } from "@react-three/drei";
-import lensflare0 from "../../Static/img/flare/lensflare0.png";
-import lightmap from "../../Static/img/lightmap.png";
 import Project from "./Project";
 import Swarmbasecolor from "../../Static/img/glass_texture/Glass_Window_003_basecolor.jpg";
 import Swarmnormalmap from "../../Static/img/glass_texture/Glass_Window_003_normal.jpg";
@@ -19,7 +19,8 @@ import SwarmHeight from "../../Static/img/glass_texture/Glass_Window_003_height.
 import SwarmRough from "../../Static/img/glass_texture/Glass_Window_003_roughness.jpg";
 import SwarmAO from "../../Static/img/glass_texture/Glass_Window_003_ambientOcclusion.jpg";
 import Swarmmetal from "../../Static/img/glass_texture/Glass_Window_003_metallic.jpg";
-import { Bloom, EffectComposer } from "@react-three/postprocessing";
+import { EffectComposer, Bloom } from "@react-three/postprocessing";
+import { VMlightPass } from "./VMlightPass";
 
 function Light() {
   const lightRef = useRef();
@@ -43,8 +44,6 @@ function Light() {
 
 function MouseSpot() {
   const { viewport } = useThree();
-  const texture = useTexture(lensflare0);
-  const lightmaptex = useTexture(lightmap);
 
   const ref = useRef();
   useFrame(({ mouse }) => {
@@ -57,18 +56,13 @@ function MouseSpot() {
   return (
     <group>
       <mesh ref={ref}>
-        <sphereBufferGeometry args={[0.1, 32, 32]} />
-        <meshBasicMaterial color={0xff7f00} />
+        <sphereGeometry args={[0.1, 32, 32]} />
+        <meshBasicMaterial />
         <directionalLight ref={ref} color="gray" intensity={1} distance={200} />
       </mesh>
-      <EffectComposer>
-        <Bloom
-          intensity={1.0} // The bloom intensity.
-          blurPass={undefined} // A blur pass.
-          luminanceThreshold={0.9} // luminance threshold. Raise this value to mask out darker elements in the scene.
-          luminanceSmoothing={0.025} // smoothness of the luminance threshold. Range is [0, 1]
-        />
-      </EffectComposer>
+      {/* <Effects>
+        <shaderPass args={[VMlightPass]} needsSwap={false} />
+      </Effects> */}
     </group>
   );
 }
@@ -197,7 +191,7 @@ const Scene = () => {
       <MouseSpot />
       <Light />
       <CenterMesh />
-      <Swarm count={700} />
+      <Swarm count={200} />
     </Canvas>
   );
 };
