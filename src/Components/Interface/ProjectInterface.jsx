@@ -4,8 +4,12 @@ import "../../Static/ProjectInterface.css";
 import { useFrame } from "@react-three/fiber";
 import * as THREE from "three";
 import { useRef, useState, useMemo } from "react";
-import { PerspectiveCamera, SpotLight, useTexture } from "@react-three/drei";
-import { Lensflare, LensflareElement } from "three-stdlib";
+import {
+  Icosahedron,
+  PerspectiveCamera,
+  SpotLight,
+  useTexture,
+} from "@react-three/drei";
 import lensflare0 from "../../Static/img/flare/lensflare0.png";
 import lightmap from "../../Static/img/lightmap.png";
 import Project from "./Project";
@@ -15,6 +19,7 @@ import SwarmHeight from "../../Static/img/glass_texture/Glass_Window_003_height.
 import SwarmRough from "../../Static/img/glass_texture/Glass_Window_003_roughness.jpg";
 import SwarmAO from "../../Static/img/glass_texture/Glass_Window_003_ambientOcclusion.jpg";
 import Swarmmetal from "../../Static/img/glass_texture/Glass_Window_003_metallic.jpg";
+import { Bloom, EffectComposer } from "@react-three/postprocessing";
 
 function Light() {
   const lightRef = useRef();
@@ -56,6 +61,14 @@ function MouseSpot() {
         <meshBasicMaterial color={0xff7f00} />
         <directionalLight ref={ref} color="gray" intensity={1} distance={200} />
       </mesh>
+      <EffectComposer>
+        <Bloom
+          intensity={1.0} // The bloom intensity.
+          blurPass={undefined} // A blur pass.
+          luminanceThreshold={0.9} // luminance threshold. Raise this value to mask out darker elements in the scene.
+          luminanceSmoothing={0.025} // smoothness of the luminance threshold. Range is [0, 1]
+        />
+      </EffectComposer>
     </group>
   );
 }

@@ -12,6 +12,7 @@
     "gsap": "^3.11.4",
     "hover-effect": "^1.1.0",
     "leva": "^0.9.34",
+    "postprocessing": "^6.29.3",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
     "react-reveal": "^1.2.2",
