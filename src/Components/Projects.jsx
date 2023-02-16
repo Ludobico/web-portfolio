@@ -2,7 +2,6 @@ import React, { useEffect, useRef } from "react";
 import "../Static/Projects.css";
 import firstproject from "../Static/video/F_Project.mp4";
 import secondproject from "../Static/video/S_Project.mp4";
-import thirdproject from "../Static/video/T_Project.mp4";
 import low_t_project from "../Static/video/low_t_project.mp4";
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
