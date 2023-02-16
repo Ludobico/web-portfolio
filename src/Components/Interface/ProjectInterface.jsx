@@ -1,5 +1,5 @@
 import { Canvas, useLoader, useThree } from "@react-three/fiber";
-import React from "react";
+import React, { useEffect } from "react";
 import "../../Static/ProjectInterface.css";
 import { useFrame } from "@react-three/fiber";
 import * as THREE from "three";
@@ -8,6 +8,8 @@ import {
   Effects,
   Icosahedron,
   PerspectiveCamera,
+  Scroll,
+  ScrollControls,
   SpotLight,
   useFBO,
   useTexture,
@@ -102,13 +104,15 @@ function MouseSpot() {
         <shaderPass args={[VMlightPass_C]} needsSwap={false} />
       </Effects> */}
       <EffectComposer>
-        <Bloom intensity={1.1} />
+        <Bloom intensity={3.1} />
       </EffectComposer>
     </group>
   );
 }
 
 function CenterMesh() {
+  const { viewport } = useThree();
+  console.log(viewport);
   return (
     <mesh position={[0, 0, 0]}>
       <torusBufferGeometry args={[3, 0.02, 40, 80]} />
@@ -226,12 +230,14 @@ function Swarm({ count }) {
 
 const Scene = () => {
   return (
-    <Canvas>
-      <MouseSpot />
-      <Light />
-      <CenterMesh />
-      <Swarm count={700} />
-    </Canvas>
+    <>
+      <Canvas>
+        <MouseSpot />
+        <Light />
+        <CenterMesh />
+        <Swarm count={300} />
+      </Canvas>
+    </>
   );
 };
 

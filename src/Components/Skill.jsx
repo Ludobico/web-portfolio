@@ -13,7 +13,7 @@ const Skill = () => {
         trigger: text,
         toggleClass: "active",
         start: "top 90%",
-        end: "top 20%",
+        end: "bottom - 10%",
       });
     });
     const skillre = gsap.utils.toArray(".item-text span");
@@ -22,7 +22,7 @@ const Skill = () => {
         trigger: text,
         toggleClass: "skillre",
         start: "top 90%",
-        end: "top 20%",
+        end: "bottom 10%",
       });
     });
 
@@ -32,7 +32,7 @@ const Skill = () => {
         trigger: text,
         toggleClass: "P90",
         start: "top 90%",
-        end: "bottom 20%",
+        end: "bottom 10%",
         scrub: true,
       });
     });
@@ -42,7 +42,7 @@ const Skill = () => {
         trigger: text,
         toggleClass: "P85",
         start: "top 90%",
-        end: "bottom 20%",
+        end: "bottom 10%",
         scrub: true,
       });
     });
@@ -52,7 +52,7 @@ const Skill = () => {
         trigger: text,
         toggleClass: "P70",
         start: "top 90%",
-        end: "bottom 20%",
+        end: "bottom 10%",
         scrub: true,
       });
     });
@@ -62,7 +62,7 @@ const Skill = () => {
         trigger: text,
         toggleClass: "P60",
         start: "top 90%",
-        end: "bottom 20%",
+        end: "bottom 10%",
         scrub: true,
       });
     });
@@ -72,7 +72,7 @@ const Skill = () => {
         trigger: text,
         toggleClass: "P55",
         start: "top 90%",
-        end: "bottom 20%",
+        end: "bottom 10%",
         scrub: true,
       });
     });

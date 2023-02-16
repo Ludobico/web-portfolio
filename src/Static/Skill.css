@@ -53,6 +53,9 @@
 
 .skills .row {
   margin: 0;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  grid-gap: 2rem;
 }
 
 .skills .item {
