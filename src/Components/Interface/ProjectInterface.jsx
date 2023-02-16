@@ -232,9 +232,9 @@ const Scene = () => {
     <>
       <Canvas resize={{ scroll: false, debounce: { scroll: 50, resize: 0 } }}>
         <CenterMesh />
-        <MouseSpot />
+        {/* <MouseSpot /> */}
         <Light />
-        <Swarm count={300} />
+        {/* <Swarm count={300} /> */}
       </Canvas>
     </>
   );

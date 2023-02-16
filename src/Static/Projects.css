@@ -6,6 +6,8 @@
   width: 100vw;
   height: auto;
   font-family: "BM";
+  z-index: 99;
+  pointer-events: none;
 }
 .projects {
   position: relative;
