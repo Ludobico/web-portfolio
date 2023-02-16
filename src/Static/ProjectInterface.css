@@ -1,5 +1,5 @@
 .Pin_top_div {
-  position: absolute;
+  position: relative;
   width: 100vw;
   height: 100vh;
 }

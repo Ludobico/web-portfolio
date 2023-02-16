@@ -7,6 +7,7 @@ import Skill from "./Skill";
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import { Loader } from "@react-three/drei";
+import Projects from "./Projects";
 const Main = () => {
   gsap.registerPlugin(ScrollTrigger);
   return (
@@ -16,6 +17,7 @@ const Main = () => {
         <Ripple />
         <Skill />
         <ProjectInterface />
+        <Projects />
       </Suspense>
     </>
   );

@@ -111,8 +111,6 @@ function MouseSpot() {
 }
 
 function CenterMesh() {
-  const { viewport } = useThree();
-  console.log(viewport);
   return (
     <mesh position={[0, 0, 0]}>
       <torusBufferGeometry args={[3, 0.02, 40, 80]} />
@@ -243,10 +241,12 @@ const Scene = () => {
 
 const ProjectInterface = () => {
   return (
-    <div className="Pin_top_div">
-      <Project />
-      <Scene />
-    </div>
+    <>
+      <div className="Pin_top_div">
+        <Project />
+        <Scene />
+      </div>
+    </>
   );
 };
 
