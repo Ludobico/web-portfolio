@@ -24,6 +24,7 @@ import Swarmmetal from "../../Static/img/glass_texture/Glass_Window_003_metallic
 import { EffectComposer, Bloom } from "@react-three/postprocessing";
 import { VMlightPass_C } from "./VMlightPass_C";
 import { UnrealBloomPass } from "three-stdlib";
+import Projects from "../Projects";
 
 function Light() {
   const lightRef = useRef();
@@ -229,10 +230,10 @@ function Swarm({ count }) {
 const Scene = () => {
   return (
     <>
-      <Canvas>
+      <Canvas resize={{ scroll: false, debounce: { scroll: 50, resize: 0 } }}>
+        <CenterMesh />
         <MouseSpot />
         <Light />
-        <CenterMesh />
         <Swarm count={300} />
       </Canvas>
     </>

@@ -8,6 +8,7 @@ import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import { Loader } from "@react-three/drei";
 import Projects from "./Projects";
+import Contact from "./Contact";
 const Main = () => {
   gsap.registerPlugin(ScrollTrigger);
   return (
@@ -18,6 +19,7 @@ const Main = () => {
         <Skill />
         <ProjectInterface />
         <Projects />
+        <Contact />
       </Suspense>
     </>
   );

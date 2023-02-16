@@ -1,15 +1,21 @@
+@font-face {
+  font-family: "BM";
+  src: url("../Static/font/BMDOHYEON.ttf") format("truetype");
+}
 .projects_top_div {
   width: 100vw;
-  height: 100vh;
+  height: auto;
+  font-family: "BM";
 }
 .projects {
   position: relative;
   width: auto;
   height: auto;
+  margin-top: 8rem;
 }
-.firstpro {
-  margin-top: 4rem;
-}
+/* .firstpro {
+  margin-top: 8rem;
+} */
 .projects_img {
   display: flex;
   justify-content: center;
@@ -19,13 +25,19 @@
 }
 .projects_box {
   position: absolute;
-  background-color: #424242;
-  width: 300px;
-  height: 9rem;
+  background-color: #262626;
+  width: 350px;
+  height: 10rem;
   right: 10%;
   padding: 40px;
-  bottom: -20%;
+  bottom: 0%;
+  transition: 1s;
 }
+.projects_box.boxActive {
+  transform-origin: center;
+  transform: scaleX(0.8);
+}
+
 .projects_desc {
   transform-origin: left;
   transform: scaleX(0);
@@ -33,7 +45,8 @@
   transition-delay: 0.2s;
   margin-bottom: 2px;
   font-size: 1.2rem;
-  line-height: 2rem;
+  letter-spacing: 2.5px;
+  line-height: 2.3rem;
   text-align: left;
   display: inline-block;
 }
@@ -57,4 +70,24 @@
   transform-origin: right;
   transition: 0.2s;
   transition-delay: 0s;
+}
+
+.github {
+  margin-top: 10px;
+  width: 60px;
+  height: 50px;
+  float: right;
+}
+
+.useSkill {
+  text-align: center;
+}
+.useSkillIcon {
+  padding-right: 40px;
+  padding-top: 20px;
+  width: 50px;
+  height: 50px;
+}
+.T_project {
+  margin-bottom: 5rem;
 }
