@@ -41,13 +41,14 @@
 }
 .projects_box {
   position: absolute;
-  background-color: #262626;
+  background-color: black;
   width: 350px;
   height: 10rem;
   right: 10%;
   padding: 40px;
   bottom: 0%;
   transition: 1s;
+  cursor: pointer;
 }
 .projects_box.boxActive {
   transform-origin: center;
@@ -82,7 +83,7 @@
   left: 0;
   width: 100%;
   height: 100%;
-  background: black;
+  background: white;
   transform-origin: right;
   transition: 0.2s;
   transition-delay: 0s;

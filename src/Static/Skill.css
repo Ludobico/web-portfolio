@@ -1,5 +1,5 @@
 .Skill_top_div {
-  width: 70vw;
+  width: 80vw;
   height: 110vh;
   margin: 0 auto;
   overflow: hidden;
@@ -72,6 +72,19 @@
 }
 .skills .item-text span {
   letter-spacing: 2px;
+}
+
+.skills .item-text img {
+  width: 40px;
+  height: 40px;
+  padding-right: 10px;
+  margin: 0;
+  transition: 0.2s;
+  transition-delay: 0.2s;
+  transform: scaleX(0);
+}
+.skills .item-text img.imgactive {
+  transform: scaleX(1);
 }
 
 .skills .item-text span:last-child {

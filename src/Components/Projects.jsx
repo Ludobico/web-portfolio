@@ -48,7 +48,7 @@ const Projects = () => {
       curvePoints: 10,
       curveLerp: 0.5,
       radius1: 5,
-      radius2: 30,
+      radius2: 5,
       velocityTreshold: 14,
       sleepRadiusX: 100,
       sleepRadiusY: 100,
