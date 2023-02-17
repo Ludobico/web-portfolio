@@ -12,6 +12,7 @@ import { Canvas, useFrame, useLoader, useThree } from "@react-three/fiber";
 import * as THREE from "three";
 import {
   OrbitControls,
+  OrthographicCamera,
   PerspectiveCamera,
   Scroll,
   ScrollControls,
@@ -97,10 +98,27 @@ function Points() {
     </points>
   );
 }
+// function Cameracontrol() {
+//   var cameraRef = useRef();
+//   useFrame((state, delta) => {
+//     cameraRef.current.position.lerp(new THREE.Vector3(0, 160, 0), delta * 0.2);
+//   });
+// return (
+//   <>
+//     <PerspectiveCamera
+//       makeDefault
+//       position={[0, 160, 0]}
+//       rotation={[99, 0, 0]}
+//       ref={cameraRef}
+//     />
+//   </>
+// );
+// }
 
 function AnimationCanvas() {
   return (
     <Canvas legacy={false} camera={{ position: [100, 10, 0], fov: 75 }}>
+      {/* <Cameracontrol /> */}
       <Points />
     </Canvas>
   );

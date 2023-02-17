@@ -4,6 +4,7 @@ import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import { useEffect } from "react";
 import Slide from "react-reveal/Slide";
+import Flip from "react-reveal/Flip";
 import html from "../Static/img/html.png";
 import css from "../Static/img/css3.png";
 import js from "../Static/img/js.png";
@@ -101,14 +102,14 @@ const Skill = () => {
   return (
     <div className="Skill_top_div">
       <section className="skills container">
-        <Slide bottom duration={1000} collapse>
+        <Flip bottom duration={1000} collapse>
           <div className="title">
             <h2>Skills</h2>
             <div>
               <h2>My Skills</h2>
             </div>
           </div>
-        </Slide>
+        </Flip>
         <p className="skill_text">
           웹 개발과 AI개발에 필요한 언어를 공부중입니다.
         </p>
