@@ -2,7 +2,7 @@ import React, { useEffect, useRef } from "react";
 import "../Static/Projects.css";
 import firstproject from "../Static/video/F_Project.mp4";
 import secondproject from "../Static/video/S_Project.mp4";
-import low_t_project from "../Static/video/low_t_project.mp4";
+import low_t_project from "../Static/gif/low_t_project.gif";
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import Fade from "react-reveal/Fade";
@@ -117,14 +117,10 @@ const Projects = () => {
       </div>
       <div className="projects T_project">
         <div className="projects_img">
-          <video
+          <img
+            src={low_t_project}
             style={{ width: "960px", height: "540px" }}
-            muted
-            autoPlay
-            loop
-          >
-            {/* <source src={low_t_project} /> */}
-          </video>
+          />
         </div>
         <div className="projects_box">
           <div className="projects_desc">Project-Rebecca</div>

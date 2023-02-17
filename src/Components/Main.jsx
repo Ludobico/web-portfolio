@@ -19,7 +19,7 @@ const Main = () => {
         <Ripple />
         <Skill />
         <ProjectInterface />
-        <SwarmCanvas />
+        {/* <SwarmCanvas /> */}
         <Projects />
         {/* <Contact /> */}
       </Suspense>

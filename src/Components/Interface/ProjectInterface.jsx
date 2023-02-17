@@ -234,7 +234,7 @@ const Scene = () => {
         <CenterMesh />
         {/* <MouseSpot /> */}
         <Light />
-        {/* <Swarm count={300} /> */}
+        <Swarm count={300} />
       </Canvas>
     </>
   );
