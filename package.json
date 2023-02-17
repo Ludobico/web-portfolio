@@ -20,8 +20,11 @@
     "react-scripts": "5.0.1",
     "react-text-transition": "^3.0.2",
     "react-typewriter-effect": "^1.1.0",
+    "smooth-scrollbar": "^8.8.1",
+    "smooth-scrollbar-react": "^2.4.1",
     "three": "0.148.0",
     "three-stdlib": "^2.21.8",
+    "threejs-toys": "^0.0.8",
     "web-vitals": "^2.1.0",
     "zustand": "^4.3.2"
   },

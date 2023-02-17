@@ -9,7 +9,7 @@ import { ScrollTrigger } from "gsap/ScrollTrigger";
 import { Loader } from "@react-three/drei";
 import Projects from "./Projects";
 import Contact from "./Contact";
-import SwarmCanvas from "./Interface/SwarmCanvas";
+import { Scrollbar } from "smooth-scrollbar-react";
 const Main = () => {
   gsap.registerPlugin(ScrollTrigger);
   return (
@@ -19,7 +19,6 @@ const Main = () => {
         <Ripple />
         <Skill />
         <ProjectInterface />
-        {/* <SwarmCanvas /> */}
         <Projects />
         {/* <Contact /> */}
       </Suspense>

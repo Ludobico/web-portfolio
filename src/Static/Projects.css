@@ -2,12 +2,26 @@
   font-family: "BM";
   src: url("../Static/font/BMDOHYEON.ttf") format("truetype");
 }
+#neonC {
+  overflow: hidden;
+  touch-action: pan-up;
+  color: #ffffff;
+  font-family: "Montserrat", sans-serif;
+  text-shadow: 0 0 5px #ffffff, 0 0 20px #000, 0 0 30px #000;
+}
+#neonC canvas {
+  /* display: block; */
+  position: absolute;
+  z-index: -1;
+  top: 0;
+}
 .projects_top_div {
+  position: absolute;
   width: 100vw;
   height: auto;
   font-family: "BM";
   z-index: 99;
-  pointer-events: none;
+  /* pointer-events: none; */
 }
 .projects {
   position: relative;

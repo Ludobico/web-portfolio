@@ -4156,7 +4156,7 @@ core-js-pure@^3.23.3:
   resolved "https://registry.yarnpkg.com/core-js-pure/-/core-js-pure-3.28.0.tgz#4ef2888475b6c856ef6f5aeef8b4f618b76ad048"
   integrity sha512-DSOVleA9/v3LNj/vFxAPfUHttKTzrB2RXhAPvR5TPXn4vrra3Z2ssytvRyt8eruJwAfwAiFADEbrjcRdcvPLQQ==
 
-core-js@^3.19.2:
+core-js@^3.19.2, core-js@^3.6.4:
   version "3.28.0"
   resolved "https://registry.yarnpkg.com/core-js/-/core-js-3.28.0.tgz#ed8b9e99c273879fdfff0edfc77ee709a5800e4a"
   integrity sha512-GiZn9D4Z/rSYvTeg1ljAIsEqFm0LaN9gVtwDCrKL80zHtS31p9BAjmTxVqTQDMpwlMolJZOFntUG2uwyj7DAqw==
@@ -10181,6 +10181,21 @@ slash@^4.0.0:
   resolved "https://registry.yarnpkg.com/slash/-/slash-4.0.0.tgz#2422372176c4c6c5addb5e2ada885af984b396a7"
   integrity sha512-3dOsAHXXUkQTpOYcoAxLIorMTp4gIQr5IW3iVb7A7lFIp0VHhnynm9izx6TssdrIcVIESAlVjtnO2K8bg+Coew==
 
+smooth-scrollbar-react@^2.4.1:
+  version "2.4.1"
+  resolved "https://registry.yarnpkg.com/smooth-scrollbar-react/-/smooth-scrollbar-react-2.4.1.tgz#e4da703e5ec78b64584831fc589645ccd45dbe5d"
+  integrity sha512-9UuVZtQO1V2oeWb1n13ZgXcZ0nM79Tqtgov/8xUeZUWicTIg8xO+tHzhfBrE/3DlvGEQ+keFDX96UGTzICoNSg==
+
+smooth-scrollbar@^8.8.1:
+  version "8.8.1"
+  resolved "https://registry.yarnpkg.com/smooth-scrollbar/-/smooth-scrollbar-8.8.1.tgz#7e0274fbc2a427cbe816c89875c72cac592fbb2f"
+  integrity sha512-FQDRtdLTRye8LdRHohNAxh0hyo7gl8+APfA+8Qu5S38MBqR8/WqOoRVzjizH6FTdbU1qGsB7gs8LhMeFJ4Jr8g==
+  dependencies:
+    core-js "^3.6.4"
+    lodash.clamp "^4.0.3"
+    lodash.debounce "^4.0.8"
+    tslib "^1.10.0"
+
 snapdragon-node@^2.0.1:
   version "2.1.1"
   resolved "https://registry.yarnpkg.com/snapdragon-node/-/snapdragon-node-2.1.1.tgz#6c175f86ff14bdb0724563e8f3c1b021a286853b"
@@ -10802,6 +10817,11 @@ three@^0.149.0:
   resolved "https://registry.yarnpkg.com/three/-/three-0.149.0.tgz#a9cf78b17d02f063ffe6dfca1e300eff2eab2927"
   integrity sha512-tohpUxPDht0qExRLDTM8sjRLc5d9STURNrdnK3w9A+V4pxaTBfKWWT/IqtiLfg23Vfc3Z+ImNfvRw1/0CtxrkQ==
 
+threejs-toys@^0.0.8:
+  version "0.0.8"
+  resolved "https://registry.yarnpkg.com/threejs-toys/-/threejs-toys-0.0.8.tgz#cf99b3ecaebcda18f72ace8ea0e70ecfc2214008"
+  integrity sha512-FTlSVbNJQA4KhMTvDrcsSrfUH5hQzzzyZ9HQk76p6V4kY5O7zoH1zb0tAnir4kDaMupANNW5Ra7ur98+Fjg4bQ==
+
 throat@^6.0.1:
   version "6.0.2"
   resolved "https://registry.yarnpkg.com/throat/-/throat-6.0.2.tgz#51a3fbb5e11ae72e2cf74861ed5c8020f89f29fe"
@@ -10943,7 +10963,7 @@ tsconfig-paths@^3.14.1:
     minimist "^1.2.6"
     strip-bom "^3.0.0"
 
-tslib@^1.8.1:
+tslib@^1.10.0, tslib@^1.8.1:
   version "1.14.1"
   resolved "https://registry.yarnpkg.com/tslib/-/tslib-1.14.1.tgz#cf2d38bdc34a134bcaf1091c41f6619e2f672d00"
   integrity sha512-Xni35NKzjgMrwevysHTCArtLDpPvye8zV/0E4EyYn43P7/7qvQwPh9BGkHewbMulVntbigmcT7rdX3BNo9wRJg==
