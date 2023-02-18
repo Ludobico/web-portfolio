@@ -130,8 +130,6 @@ function Intro() {
       <div className="Intro_dev">
         <TypeWriterEffect
           textStyle={{
-            fontFamily: "Red Hat Display",
-            fontSize: "6rem",
             textAlign: "center",
           }}
           startDelay={200}

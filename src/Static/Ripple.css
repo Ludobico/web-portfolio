@@ -15,9 +15,18 @@
   text-align: center;
   top: 20%;
 }
-
+.react-typewriter-text {
+  font-family: "Red Hat Display";
+  font-size: 6rem;
+  text-align: center;
+}
+@media (max-width: 1024px) {
+  .react-typewriter-text {
+    font-size: 4rem;
+  }
+}
 @media (max-width: 479px) {
-  .Intro_writer {
+  .react-typewriter-text {
     font-size: 2rem;
   }
 }
