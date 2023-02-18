@@ -6,24 +6,28 @@ import {
   useTexture,
 } from "@react-three/drei";
 import { Canvas, useLoader } from "@react-three/fiber";
-import React, { useEffect } from "react";
+import { useControls } from "leva";
+import React, { useEffect, Suspense, useRef } from "react";
 import * as THREE from "three";
 import { LinearEncoding, RepeatWrapping, TextureLoader } from "three";
+import { GLTFLoader, RGBELoader } from "three-stdlib";
 import "../Static/Contact.css";
-import basecolor from "../Static/img/floor_texture/grid-texture.png";
-import normal from "../Static/img/floor_texture/terrain_normal.jpg";
-import rough from "../Static/img/floor_texture/terrain_roughness.jpg";
+import gltfTexture from "../Static/hdr/aerodynamics_workshop_1k.hdr";
 
 function Ground() {
-  const roughmap = useLoader(TextureLoader, rough);
-  const normalmap = useLoader(TextureLoader, normal);
+  const [roughmap, normalmap] = useLoader(TextureLoader, [
+    process.env.PUBLIC_URL + "floor_texture/terrain_roughness.jpg",
+    process.env.PUBLIC_URL + "floor_texture/terrain_normal.jpg",
+  ]);
 
   useEffect(() => {
     [normalmap, roughmap].forEach((t) => {
       t.wrapS = RepeatWrapping;
       t.wrapT = RepeatWrapping;
       t.repeat.set(5, 5);
+      t.offset.set(0, 0);
     });
+
     normalmap.encoding = LinearEncoding;
   }, [normalmap, roughmap]);
   return (
@@ -37,18 +41,17 @@ function Ground() {
         dithering={true}
         color={[0.015, 0.015, 0.015]}
         roughness={0.7}
-        blur={[1000, 400]} // Blur ground reflections (width, heigt), 0 skips blur
-        mixBlur={30} // How much blur mixes with surface roughness (default = 1)
-        mixStrength={80} // Strength of the reflections
-        mixContrast={1} // Contrast of the reflections
-        resolution={1024} // Off-buffer resolution, lower=faster, higher=better quality, slower
-        mirror={0} // Mirror environment, 0 = texture colors, 1 = pick up env colors
-        depthScale={0.01} // Scale the depth factor (0 = no depth, default = 0)
-        minDepthThreshold={0.9} // Lower edge for the depthTexture interpolation (default = 0)
-        maxDepthThreshold={1} // Upper edge for the depthTexture interpolation (default = 0)
-        depthToBlurRatioBias={0.25} // Adds a bias factor to the depthTexture before calculating the blur amount [blurFactor = blurTexture * (depthTexture + bias)]. It accepts values between 0 and 1, default is 0.25. An amount > 0 of bias makes sure that the blurTexture is not too sharp because of the multiplication with the depthTexture
-        debug={0}
-        reflectorOffset={0.2} // Offsets the virtual camera that projects the reflection. Useful when the reflective surface is some distance from the object's origin (default = 0)
+        blur={[1000, 400]}
+        mixBlur={30}
+        mixStrength={80}
+        mixContrast={1}
+        resolution={1024}
+        mirror={0}
+        depthScale={0.01}
+        minDepthThreshold={0.9}
+        maxDepthThreshold={1}
+        depthToBlurRatioBias={0.25}
+        reflectorOffset={0.2}
       />
     </mesh>
   );
@@ -57,40 +60,62 @@ function Ground() {
 function Floor() {
   return (
     <>
+      <OrbitControls
+        target={[0, 0.35, 0]}
+        maxPolarAngle={1.45}
+        enablePan={false}
+        enableZoom={false}
+        autoRotate
+      />
       <PerspectiveCamera makeDefault fov={50} position={[3, 2, 5]} />
       <color args={[0, 0, 0]} attach="background" />
-      <SpotLight
+      <spotLight
         color={[1, 0.25, 0.7]}
         intensity={1.5}
         angle={0.6}
         penumbra={0.5}
         position={[5, 5, 0]}
         castShadow
+        shadow-bias={-0.0001}
       />
-      <SpotLight
+      <spotLight
         color={[0.14, 0.5, 1]}
         intensity={2}
         angle={0.6}
         penumbra={0.5}
         position={[-5, 5, 0]}
         castShadow
+        shadow-bias={-0.0001}
       />
       <Ground />
     </>
   );
 }
+
+const GLTFModel = () => {
+  const ref = useRef();
+  const gltf = useLoader(GLTFLoader, "/elven_ranger_statue/scene.gltf");
+
+  return (
+    <mesh ref={ref}>
+      <primitive object={gltf.scene} scale={0.2} position={[0, 2, 0]} />;
+    </mesh>
+  );
+};
 function Scene() {
   return (
-    <Canvas id="Contact_Canvas">
-      <Floor />
-    </Canvas>
+    <Suspense fallback={null}>
+      <Canvas shadows>
+        <Floor />
+        <GLTFModel />
+      </Canvas>
+    </Suspense>
   );
 }
 const Contact = () => {
   return (
     <div className="Contact_top_div">
       <Scene />
-      <div className="checker">asdasd</div>
     </div>
   );
 };
