@@ -33,7 +33,10 @@ const Project = () => {
       <div className="project_intro_sub">
         <div className="project_reveal">프로젝트에 대한 자세한 정보는</div>
         <div className="project_reveal">
-          깃허브에 등록된 README를 읽어주세요
+          하단의 깃허브 아이콘을 눌러서 확인해주세요.
+        </div>
+        <div className="project_reveal">
+          모바일과 태블릿은 영상을 터치하시면 이동합니다.
         </div>
       </div>
     </>

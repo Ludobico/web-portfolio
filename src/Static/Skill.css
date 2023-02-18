@@ -1,5 +1,5 @@
 .Skill_top_div {
-  width: 80vw;
+  width: 90vw;
   height: auto;
   margin: 0 auto;
   overflow: hidden;
@@ -60,10 +60,22 @@
 
 @media (max-width: 1024px) {
   .skills .row {
+    margin: 0;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    height: auto;
+    width: 100vw;
+    grid-gap: 2rem;
+  }
+}
+@media (max-width: 760px) {
+  .skills .row {
+    margin: 0;
+    display: grid;
     grid-template-columns: repeat(1, 1fr);
     height: auto;
     width: 100vw;
-    grid-gap: 2 rem;
+    grid-gap: 2rem;
   }
 }
 
@@ -72,8 +84,17 @@
   margin: 0;
 }
 
+@media (max-width: 1024px) {
+  .skills .item {
+    width: 60%;
+    padding: 0.5rem 0rem;
+    margin: 0;
+  }
+}
+
 @media (max-width: 479px) {
   .skills .item {
+    width: 100%;
     padding: 0.5rem;
     margin: 0;
   }

@@ -41,6 +41,15 @@ const Projects = () => {
         scrub: true,
       });
     });
+    const quaryDesc = gsap.utils.toArray(".query_desc");
+    quaryDesc.forEach((text, i) => {
+      ScrollTrigger.create({
+        trigger: text,
+        toggleClass: "query_desc_active",
+        start: "top 90%",
+        end: "bottom - 10%",
+      });
+    });
 
     neonCursor({
       el: document.getElementById("neonC"),
@@ -60,13 +69,9 @@ const Projects = () => {
     <>
       <div className="projects_top_div" id="neonC">
         <div className="projects firstpro">
+          <div className="query_desc">GreenTouch 2022.08</div>
           <div className="projects_img">
-            <video
-              style={{ width: "960px", height: "540px" }}
-              muted
-              autoPlay
-              loop
-            >
+            <video muted autoPlay loop>
               <source src={firstproject} />
             </video>
           </div>
@@ -93,13 +98,9 @@ const Projects = () => {
           </div>
         </div>
         <div className="projects">
+          <div className="query_desc">SoloFitness 2022.12</div>
           <div className="projects_img">
-            <video
-              style={{ width: "960px", height: "540px" }}
-              muted
-              autoPlay
-              loop
-            >
+            <video muted autoPlay loop>
               <source src={secondproject} />
             </video>
           </div>
@@ -138,11 +139,9 @@ const Projects = () => {
           </div>
         </div>
         <div className="projects T_project">
+          <div className="query_desc">Project-Rebecca 2023.01</div>
           <div className="projects_img">
-            <img
-              src={low_t_project}
-              style={{ width: "960px", height: "540px" }}
-            />
+            <img src={low_t_project} />
           </div>
           <div className="projects_box">
             <div className="projects_desc">Project-Rebecca</div>
