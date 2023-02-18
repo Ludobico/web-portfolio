@@ -90,6 +90,9 @@
   transition-delay: 0.2s;
   margin-top: 10px;
 }
+.project_reveal:nth-child(3) {
+  margin-top: 10px;
+}
 .project_reveal.active {
   transform: scaleX(1);
   transition-delay: 0s;

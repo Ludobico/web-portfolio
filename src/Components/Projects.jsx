@@ -15,6 +15,7 @@ import mediapipe from "../Static/img/mediapipe.png";
 import pytorch from "../Static/img/pytorch_logo.png";
 import fastapi from "../Static/img/fastapi.png";
 import three from "../Static/img/three.png";
+import gsapImg from "../Static/img/gsap.png";
 import { Html } from "@react-three/drei";
 import { Canvas, useFrame, useThree } from "@react-three/fiber";
 import { neonCursor } from "threejs-toys";
@@ -103,16 +104,16 @@ const Projects = () => {
             <video muted autoPlay loop>
               <source src={secondproject} />
             </video>
-          </div>
-          <div className="projects_box">
-            <div className="projects_desc">SoloFitness</div>
-            <br />
-            <div className="projects_desc">2022.12</div>
-            <br />
-            <div className="projects_desc">
-              인공지능사관학교 두번째 프로젝트
+            <div className="projects_box">
+              <div className="projects_desc">SoloFitness</div>
+              <br />
+              <div className="projects_desc">2022.12</div>
+              <br />
+              <div className="projects_desc">
+                인공지능사관학교 두번째 프로젝트
+              </div>
+              <img className="github" src={github}></img>
             </div>
-            <img className="github" src={github}></img>
           </div>
           <div className="useSkill">
             <Fade bottom delay={500}>
@@ -158,6 +159,9 @@ const Projects = () => {
             </Fade>
             <Fade bottom delay={1000}>
               <img className="useSkillIcon" src={three} />
+            </Fade>
+            <Fade bottom delay={1500}>
+              <img className="useSkillIcon" src={gsapImg} />
             </Fade>
           </div>
         </div>
