@@ -1,6 +1,6 @@
 .Skill_top_div {
   width: 80vw;
-  height: 110vh;
+  height: auto;
   margin: 0 auto;
   overflow: hidden;
 }
@@ -56,6 +56,13 @@
   display: grid;
   grid-template-columns: repeat(2, 1fr);
   grid-gap: 2rem;
+}
+
+@media (max-width: 768px) {
+  .skills .row {
+    grid-template-columns: repeat(1, 1fr);
+    height: auto;
+  }
 }
 
 .skills .item {

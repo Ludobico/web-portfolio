@@ -27,12 +27,38 @@ body {
   top: 1.25rem;
   left: 70%;
 }
+
+@media (max-width: 1024px) {
+  .header_top_div header {
+    left: calc(50% - 120px);
+  }
+}
+
+@media (max-width: 768px) {
+  .header_top_div header {
+    left: calc(50% - 120px);
+  }
+  .header_top_div .nav_list {
+    display: flex;
+    gap: 2rem;
+  }
+}
+
+@media (max-width: 767px) {
+  .header_top_div header {
+    left: calc(50% - 80px);
+  }
+  .header_top_div {
+    display: none;
+  }
+}
+
 .header_top_div .nav {
   margin-top: 20px;
 }
 .header_top_div .nav_list {
   display: flex;
-  gap: 3rem;
+  gap: 2rem;
 }
 
 li {
