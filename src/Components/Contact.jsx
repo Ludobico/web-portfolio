@@ -57,7 +57,6 @@ function Ground() {
 function Floor() {
   return (
     <>
-      <OrbitControls />
       <PerspectiveCamera makeDefault fov={50} position={[3, 2, 5]} />
       <color args={[0, 0, 0]} attach="background" />
       <SpotLight
@@ -82,7 +81,7 @@ function Floor() {
 }
 function Scene() {
   return (
-    <Canvas>
+    <Canvas id="Contact_Canvas">
       <Floor />
     </Canvas>
   );
@@ -91,6 +90,7 @@ const Contact = () => {
   return (
     <div className="Contact_top_div">
       <Scene />
+      <div className="checker">asdasd</div>
     </div>
   );
 };

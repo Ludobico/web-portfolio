@@ -19,7 +19,7 @@ const Main = () => {
         <Skill />
         <ProjectInterface />
         <Projects />
-        {/* <Contact /> */}
+        <Contact />
       </Suspense>
     </>
   );

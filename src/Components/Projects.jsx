@@ -19,6 +19,7 @@ import gsapImg from "../Static/img/gsap.png";
 import { Html } from "@react-three/drei";
 import { Canvas, useFrame, useThree } from "@react-three/fiber";
 import { neonCursor } from "threejs-toys";
+import Contact from "./Contact";
 
 const Projects = () => {
   useEffect(() => {
@@ -166,10 +167,6 @@ const Projects = () => {
           </div>
         </div>
       </div>
-      {/* <Canvas
-        style={{ position: "relative", height: "250vh" }}
-        id="canvasneon"
-      ></Canvas> */}
     </>
   );
 };
