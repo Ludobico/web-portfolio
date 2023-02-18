@@ -15,3 +15,9 @@
   text-align: center;
   top: 20%;
 }
+
+@media (max-width: 479px) {
+  .Intro_writer {
+    font-size: 2rem;
+  }
+}

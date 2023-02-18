@@ -58,7 +58,7 @@
   grid-gap: 2rem;
 }
 
-@media (max-width: 768px) {
+@media (max-width: 1024px) {
   .skills .row {
     grid-template-columns: repeat(1, 1fr);
     height: auto;
@@ -77,6 +77,13 @@
   font-size: 1.3rem;
   position: relative;
 }
+@media (max-width: 1024px) {
+  .skills .item-text {
+    font-size: 1.1rem;
+    font-weight: 400;
+  }
+}
+
 .skills .item-text span {
   letter-spacing: 2px;
 }

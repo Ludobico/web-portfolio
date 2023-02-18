@@ -38,16 +38,9 @@ body {
   .header_top_div header {
     left: calc(50% - 120px);
   }
-  .header_top_div .nav_list {
-    display: flex;
-    gap: 2rem;
-  }
 }
 
 @media (max-width: 767px) {
-  .header_top_div header {
-    left: calc(50% - 80px);
-  }
   .header_top_div {
     display: none;
   }
