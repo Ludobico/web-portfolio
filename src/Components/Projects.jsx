@@ -1,7 +1,7 @@
 import React, { useEffect, useRef } from "react";
 import "../Static/Projects.css";
-import firstproject from "../Static/video/F_Project.mp4";
-import secondproject from "../Static/video/S_Project.mp4";
+import firstproject from "../Static/video/F_Project_low.mp4";
+import secondproject from "../Static/video/S_Project_low.mp4";
 import low_t_project from "../Static/gif/low_t_project.gif";
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
@@ -53,19 +53,19 @@ const Projects = () => {
       });
     });
 
-    neonCursor({
-      el: document.getElementById("neonC"),
-      shaderPoints: 16,
-      curvePoints: 10,
-      curveLerp: 0.5,
-      radius1: 5,
-      radius2: 5,
-      velocityTreshold: 14,
-      sleepRadiusX: 100,
-      sleepRadiusY: 100,
-      sleepTimeCoefX: 0.0025,
-      sleepTimeCoefY: 0.0025,
-    });
+    // neonCursor({
+    //   el: document.getElementById("neonC"),
+    //   shaderPoints: 16,
+    //   curvePoints: 10,
+    //   curveLerp: 0.5,
+    //   radius1: 5,
+    //   radius2: 5,
+    //   velocityTreshold: 14,
+    //   sleepRadiusX: 100,
+    //   sleepRadiusY: 100,
+    //   sleepTimeCoefX: 0.0025,
+    //   sleepTimeCoefY: 0.0025,
+    // });
   });
   return (
     <>
@@ -73,7 +73,7 @@ const Projects = () => {
         <div className="projects firstpro">
           <div className="query_desc">GreenTouch 2022.08</div>
           <div className="projects_img">
-            <video muted autoPlay loop>
+            <video>
               <source src={firstproject} />
             </video>
           </div>
@@ -102,7 +102,7 @@ const Projects = () => {
         <div className="projects">
           <div className="query_desc">SoloFitness 2022.12</div>
           <div className="projects_img">
-            <video muted autoPlay loop>
+            <video>
               <source src={secondproject} />
             </video>
             <div className="projects_box">
