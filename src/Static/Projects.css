@@ -143,6 +143,9 @@
   transition: 0.2s;
   transition-delay: 0s;
 }
+.T_project {
+}
+
 @media (min-width: 1025px) {
   .query_desc {
     display: none;

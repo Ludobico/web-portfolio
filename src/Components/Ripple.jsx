@@ -21,7 +21,6 @@ import {
 } from "@react-three/drei";
 import TypeWriterEffect from "react-typewriter-effect";
 import gsap from "gsap";
-import { useState } from "react";
 
 function Points() {
   const imgTex = useLoader(THREE.TextureLoader, lightImg);
@@ -98,27 +97,23 @@ function Points() {
     </points>
   );
 }
-// function Cameracontrol() {
-//   var cameraRef = useRef();
-//   useFrame((state, delta) => {
-//     cameraRef.current.position.lerp(new THREE.Vector3(0, 160, 0), delta * 0.2);
-//   });
-// return (
-//   <>
-//     <PerspectiveCamera
-//       makeDefault
-//       position={[0, 160, 0]}
-//       rotation={[99, 0, 0]}
-//       ref={cameraRef}
-//     />
-//   </>
-// );
-// }
+function Cameracontrol() {
+  return (
+    <>
+      <OrbitControls
+        enablePan={false}
+        enableRotate={false}
+        enableZoom={false}
+        target={[0, 0, 0]}
+      />
+    </>
+  );
+}
 
 function AnimationCanvas() {
   return (
     <Canvas legacy={false} camera={{ position: [100, 10, 0], fov: 75 }}>
-      {/* <Cameracontrol /> */}
+      <Cameracontrol />
       <Points />
     </Canvas>
   );
