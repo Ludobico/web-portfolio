@@ -84,3 +84,36 @@
   color: white;
   cursor: pointer;
 }
+@media (max-width: 479px) {
+  .section_div {
+    font-size: 3rem;
+    display: flex;
+    line-height: 1.75;
+    color: transparent;
+    -webkit-text-stroke: 1px #fff;
+    letter-spacing: 0.05em;
+    text-transform: uppercase;
+  }
+
+  .quote {
+    font-size: 0.8rem;
+    letter-spacing: 0.03em;
+    text-align: left;
+  }
+
+  .contact_grid_box {
+    display: grid;
+    margin-top: 50px;
+    grid-template-columns: 1fr;
+    grid-template-rows: 100px;
+    grid-gap: 40px;
+  }
+}
+@media (max-width: 1024px) {
+  .Contact_text_top_div {
+    position: absolute;
+    color: white;
+    top: 3%;
+    left: 5%;
+  }
+}

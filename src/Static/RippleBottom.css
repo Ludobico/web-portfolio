@@ -44,3 +44,7 @@
     opacity: 0;
   }
 }
+#scroll_active {
+  transition: 1s;
+  transform: scale(0);
+}

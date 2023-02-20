@@ -170,8 +170,8 @@ function Swarm({ count }) {
       let { t, factor, speed, xFactor, yFactor, zFactor } = particle;
       // There is no sense or reason to any of this, just messing around with trigonometric functions
       t = particle.t += speed / 2;
-      const a = Math.cos(t) + Math.sin(t * 1) / 10;
-      const b = Math.sin(t) + Math.cos(t * 2) / 10;
+      const a = Math.cos(t) + Math.sin(t * 1) / 500;
+      const b = Math.sin(t) + Math.cos(t * 2) / 500;
       const s = Math.cos(t);
       particle.mx += (state.mouse.x * 1000 - particle.mx) * 0.01;
       particle.my += (state.mouse.y * 1000 - 1 - particle.my) * 0.01;

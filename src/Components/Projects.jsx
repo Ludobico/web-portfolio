@@ -20,6 +20,8 @@ import { Html } from "@react-three/drei";
 import { Canvas, useFrame, useThree } from "@react-three/fiber";
 import { neonCursor } from "threejs-toys";
 import Contact from "./Contact";
+import S_Project_lowgif from "../Static/gif/S_Project_low.gif";
+import F_Project_lowgif from "../Static/gif/F_Project_low.gif";
 
 const Projects = () => {
   useEffect(() => {
@@ -53,19 +55,19 @@ const Projects = () => {
       });
     });
 
-    neonCursor({
-      el: document.getElementById("neonC"),
-      shaderPoints: 16,
-      curvePoints: 10,
-      curveLerp: 0.5,
-      radius1: 5,
-      radius2: 5,
-      velocityTreshold: 14,
-      sleepRadiusX: 100,
-      sleepRadiusY: 100,
-      sleepTimeCoefX: 0.0025,
-      sleepTimeCoefY: 0.0025,
-    });
+    // neonCursor({
+    //   el: document.getElementById("neonC"),
+    //   shaderPoints: 16,
+    //   curvePoints: 10,
+    //   curveLerp: 0.5,
+    //   radius1: 5,
+    //   radius2: 5,
+    //   velocityTreshold: 14,
+    //   sleepRadiusX: 100,
+    //   sleepRadiusY: 100,
+    //   sleepTimeCoefX: 0.0025,
+    //   sleepTimeCoefY: 0.0025,
+    // });
   });
   const link_1 = () => {
     window.open(
@@ -79,6 +81,24 @@ const Projects = () => {
   const link_3 = () => {
     window.open("https://github.com/Ludobico/Project_Rebecca", "_blank");
   };
+  const link_1_divice = () => {
+    if (window.innerWidth < 1024) {
+      window.open(
+        "https://github.com/Ludobico/First-project-GreenTouch",
+        "_blank"
+      );
+    }
+  };
+  const link_2_divice = () => {
+    if (window.innerWidth < 1024) {
+      window.open("https://github.com/Ludobico/Second_Team_Project", "_blank");
+    }
+  };
+  const link_3_divice = () => {
+    if (window.innerWidth < 1024) {
+      window.open("https://github.com/Ludobico/Project_Rebecca", "_blank");
+    }
+  };
 
   return (
     <>
@@ -86,9 +106,10 @@ const Projects = () => {
         <div className="projects firstpro">
           <div className="query_desc">GreenTouch 2022.08</div>
           <div className="projects_img">
-            <video>
+            {/* <video>
               <source src={firstproject} />
-            </video>
+            </video> */}
+            <img src={F_Project_lowgif} onClick={link_1_divice} />
           </div>
           <div className="projects_box">
             <div className="projects_desc">GreenTouch</div>
@@ -115,9 +136,10 @@ const Projects = () => {
         <div className="projects">
           <div className="query_desc">SoloFitness 2022.12</div>
           <div className="projects_img">
-            <video>
+            {/* <video>
               <source src={secondproject} />
-            </video>
+            </video> */}
+            <img src={S_Project_lowgif} onClick={link_2_divice} />
             <div className="projects_box">
               <div className="projects_desc">SoloFitness</div>
               <br />
@@ -156,7 +178,7 @@ const Projects = () => {
         <div className="projects T_project">
           <div className="query_desc">Project-Rebecca 2023.01</div>
           <div className="projects_img">
-            <img src={low_t_project} />
+            <img src={low_t_project} onClick={link_3_divice} />
           </div>
           <div className="projects_box">
             <div className="projects_desc">Project-Rebecca</div>

@@ -12,6 +12,11 @@ import { LinearEncoding, RepeatWrapping, TextureLoader } from "three";
 import { GLTFLoader, RGBELoader } from "three-stdlib";
 import "../Static/Contact.css";
 import Fade from "react-reveal/Fade";
+import gltfcolor from "../Static/img/Metal_Diamond_001_SD/Metal_Diamond_001_COLOR.jpg";
+import gltfdisp from "../Static/img/Metal_Diamond_001_SD/Metal_Diamond_001_DISP.png";
+import gltfnormal from "../Static/img/Metal_Diamond_001_SD/Metal_Diamond_001_NORM.jpg";
+import gltfao from "../Static/img/Metal_Diamond_001_SD/Metal_Diamond_001_OCC.jpg";
+import gltfrough from "../Static/img/Metal_Diamond_001_SD/Metal_Diamond_001_ROUGH.jpg";
 
 function Ground() {
   const [roughmap, normalmap] = useLoader(TextureLoader, [
@@ -31,7 +36,7 @@ function Ground() {
   }, [normalmap, roughmap]);
   return (
     <mesh rotation-x={-Math.PI * 0.5} castShadow receiveShadow>
-      <planeGeometry args={[30, 30]} />
+      <planeGeometry args={[20, 20]} />
       <MeshReflectorMaterial
         envMapIntensity={0}
         normalMap={normalmap}
@@ -40,6 +45,7 @@ function Ground() {
         dithering={true}
         color={[0.015, 0.015, 0.015]}
         roughness={0.7}
+        metalness={0.8}
         blur={[1000, 400]}
         mixBlur={30}
         mixStrength={80}
@@ -94,11 +100,28 @@ function Floor() {
 const GLTFModel = () => {
   const ref = useRef();
   const gltf = useLoader(GLTFLoader, "/elven_ranger_statue/scene.gltf");
+  const color = useTexture(gltfcolor);
+  const disp = useTexture(gltfdisp);
+  const normal = useTexture(gltfnormal);
+  const ao = useTexture(gltfao);
+  const rough = useTexture(gltfrough);
+
+  useEffect(() => {
+    gltf.scene.traverse((child) => {
+      if (child.isMesh) {
+        child.material.metalness = 1;
+        child.material.roughness = 0.1;
+      }
+    });
+  });
 
   return (
-    <mesh ref={ref}>
-      <primitive object={gltf.scene} scale={0.2} position={[0, 2, 0]} />;
-    </mesh>
+    <group>
+      <mesh ref={ref}>
+        <primitive object={gltf.scene} scale={0.2} position={[0, 2, 0]} />;
+      </mesh>
+      <directionalLight color={0xffffff} intensity={0.5} />
+    </group>
   );
 };
 function Scene() {
