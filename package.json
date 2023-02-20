@@ -27,7 +27,7 @@
     "three-stdlib": "^2.21.8",
     "threejs-toys": "^0.0.8",
     "web-vitals": "^2.1.0",
-    "zustand": "^4.3.2"
+    "zustand": "^4.3.3"
   },
   "scripts": {
     "start": "react-scripts start",

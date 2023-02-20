@@ -47,6 +47,8 @@
   padding: 40px;
   bottom: 0%;
   transition: 1s;
+}
+.projects_box img {
   cursor: pointer;
 }
 .projects_box.boxActive {

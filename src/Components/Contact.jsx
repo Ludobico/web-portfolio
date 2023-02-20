@@ -11,6 +11,7 @@ import * as THREE from "three";
 import { LinearEncoding, RepeatWrapping, TextureLoader } from "three";
 import { GLTFLoader, RGBELoader } from "three-stdlib";
 import "../Static/Contact.css";
+import Fade from "react-reveal/Fade";
 
 function Ground() {
   const [roughmap, normalmap] = useLoader(TextureLoader, [
@@ -111,25 +112,30 @@ function Scene() {
   );
 }
 const Contact_Text = () => {
+  const link_1 = () => {
+    window.open("https://github.com/Ludobico", "_blank");
+  };
   return (
     <div className="Contact_text_top_div">
-      <section className="contact_section">
-        <div className="section_div">
-          <div className="split_div">contact</div>
-        </div>
-        <div className="quote">Stay hungry, Stay foolish</div>
-        <div className="contact_grid_box">
-          <div className="contact_email">
-            <div>E-Mail</div>
-            <div>aqs450@gmail.com</div>
-            <div>kk99270@naver.com</div>
+      <Fade bottom duration={2000}>
+        <section className="contact_section">
+          <div className="section_div">
+            <div className="split_div">contact</div>
           </div>
-          <div className="contact_social">
-            <div>social</div>
-            <div>Github</div>
+          <div className="quote">Stay hungry, Stay foolish</div>
+          <div className="contact_grid_box">
+            <div className="contact_email">
+              <div>E-Mail</div>
+              <div>aqs450@gmail.com</div>
+              <div>kk99270@naver.com</div>
+            </div>
+            <div className="contact_social">
+              <div>social</div>
+              <div onClick={link_1}>Github</div>
+            </div>
           </div>
-        </div>
-      </section>
+        </section>
+      </Fade>
     </div>
   );
 };

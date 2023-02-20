@@ -1,18 +1,14 @@
 import React from "react";
 import "../Static/Header.css";
 import { useNavigate } from "react-router";
+import useZustand from "./Store/Zustand";
 
 const Header = () => {
-  const navigator = useNavigate();
-
-  const toTop = () => {
-    navigator("/");
-  };
-  const toContact = () => {
-    navigator("/contact");
-  };
-  const toInfo = () => {
-    navigator("/info");
+  const { skill_scroll } = useZustand();
+  const depression2 = () => {
+    document
+      .getElementById({ skill_scroll })
+      .scrollIntoView({ behavior: "smooth" });
   };
   return (
     <div className="header_top_div">
@@ -21,12 +17,12 @@ const Header = () => {
           <ul className="nav_list">
             <li>
               <a>
-                <span onClick={toTop}>Top</span>
+                <span>Top</span>
               </a>
             </li>
             <li>
               <a>
-                <span onClick={toInfo}>Skill</span>
+                <span onClick={depression2}>Skill</span>
               </a>
             </li>
             <li>
@@ -36,7 +32,7 @@ const Header = () => {
             </li>
             <li>
               <a>
-                <span onClick={toContact}>Contact</span>
+                <span>Contact</span>
               </a>
             </li>
           </ul>

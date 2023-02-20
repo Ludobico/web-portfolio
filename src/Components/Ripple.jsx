@@ -21,6 +21,7 @@ import {
 } from "@react-three/drei";
 import TypeWriterEffect from "react-typewriter-effect";
 import gsap from "gsap";
+import RippleBottom from "./Interface/RippleBottom";
 
 function Points() {
   const imgTex = useLoader(THREE.TextureLoader, lightImg);
@@ -144,6 +145,7 @@ const Ripple = () => {
       <Suspense fallback={<div>Loading...</div>}>
         <Intro />
         <AnimationCanvas />
+        <RippleBottom />
       </Suspense>
     </div>
   );

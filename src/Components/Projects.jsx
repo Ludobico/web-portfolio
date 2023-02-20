@@ -67,6 +67,19 @@ const Projects = () => {
       sleepTimeCoefY: 0.0025,
     });
   });
+  const link_1 = () => {
+    window.open(
+      "https://github.com/Ludobico/First-project-GreenTouch",
+      "_blank"
+    );
+  };
+  const link_2 = () => {
+    window.open("https://github.com/Ludobico/Second_Team_Project", "_blank");
+  };
+  const link_3 = () => {
+    window.open("https://github.com/Ludobico/Project_Rebecca", "_blank");
+  };
+
   return (
     <>
       <div className="projects_top_div" id="neonC">
@@ -85,7 +98,7 @@ const Projects = () => {
             <div className="projects_desc">
               인공지능사관학교 첫번째 프로젝트
             </div>
-            <img className="github" src={github}></img>
+            <img className="github" src={github} onClick={link_1}></img>
           </div>
           <div className="useSkill">
             <Fade bottom delay={500}>
@@ -113,7 +126,7 @@ const Projects = () => {
               <div className="projects_desc">
                 인공지능사관학교 두번째 프로젝트
               </div>
-              <img className="github" src={github}></img>
+              <img className="github" src={github} onClick={link_2}></img>
             </div>
           </div>
           <div className="useSkill">
@@ -152,7 +165,7 @@ const Projects = () => {
             <br />
             <div className="projects_desc">Three.js 토이 프로젝트</div>
             <br />
-            <img className="github" src={github}></img>
+            <img className="github" src={github} onClick={link_3}></img>
           </div>
           <div className="useSkill">
             <Fade bottom delay={500}>

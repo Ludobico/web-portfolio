@@ -16,6 +16,7 @@ import mediapipe from "../Static/img/mediapipe.png";
 import pytorch from "../Static/img/pytorch_logo.png";
 import fastapi from "../Static/img/fastapi.png";
 import three from "../Static/img/three.png";
+import useZustand from "./Store/Zustand";
 
 const Skill = () => {
   useEffect(() => {
@@ -99,8 +100,10 @@ const Skill = () => {
     });
   }, []);
 
+  const { skill_scroll } = useZustand();
+
   return (
-    <div className="Skill_top_div">
+    <div className="Skill_top_div" id={skill_scroll}>
       <section className="skills container">
         <Flip bottom duration={1000} collapse>
           <div className="title">

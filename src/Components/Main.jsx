@@ -14,7 +14,7 @@ const Main = () => {
   return (
     <>
       <Suspense fallback={<Loader />}>
-        <Header />
+        {/* <Header /> */}
         <Ripple />
         <Skill />
         <ProjectInterface />

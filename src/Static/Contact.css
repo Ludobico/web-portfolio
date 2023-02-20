@@ -1,6 +1,6 @@
 .Contact_top_div {
   width: 100vw;
-  height: 80vh;
+  height: 100vh;
   margin: 0;
   position: relative;
 }
@@ -41,6 +41,9 @@
   border-left: 2px solid white;
   padding-left: 15px;
 }
+.contact_email div {
+  padding-bottom: 5px;
+}
 .contact_email div:nth-child(1) {
   text-transform: uppercase;
 }
@@ -51,4 +54,33 @@
 }
 .contact_social div:nth-child(1) {
   text-transform: uppercase;
+  padding-bottom: 5px;
+}
+
+.contact_social div:nth-child(2) {
+  width: max-content;
+  text-decoration: none;
+  position: relative;
+  transition: all 0.3s ease-in-out;
+}
+
+.contact_social div:nth-child(2):before {
+  content: "";
+  position: absolute;
+  width: 0;
+  height: 2px;
+  bottom: -1px;
+  left: 0;
+  background-color: white;
+  transition: width 0.3s ease-in-out;
+}
+
+.contact_social div:nth-child(2):hover:before {
+  width: 100%;
+  cursor: pointer;
+}
+
+.contact_social div:nth-child(2):hover {
+  color: white;
+  cursor: pointer;
 }
