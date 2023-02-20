@@ -2,7 +2,7 @@
   font-family: "BM";
   src: url("../Static/font/BMDOHYEON.ttf") format("truetype");
 }
-#neonC {
+/* #neonC {
   touch-action: pan-up;
   color: #ffffff;
   font-family: "Montserrat", sans-serif;
@@ -13,7 +13,7 @@
   height: auto;
   z-index: -1;
   top: 0;
-}
+} */
 .projects_top_div {
   position: relative;
   width: 100vw;
