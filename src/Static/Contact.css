@@ -2,6 +2,53 @@
   width: 100vw;
   height: 80vh;
   margin: 0;
-  position: inherit;
-  overflow: hidden;
+  position: relative;
+}
+
+.Contact_text_top_div {
+  position: absolute;
+  color: white;
+  top: 10%;
+  left: 5%;
+}
+
+.section_div {
+  font-size: 6rem;
+  display: flex;
+  line-height: 1.75;
+  color: transparent;
+  -webkit-text-stroke: 3px #fff;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+}
+
+.quote {
+  font-size: 1.5rem;
+  letter-spacing: 0.03em;
+  text-align: left;
+}
+
+.contact_grid_box {
+  display: grid;
+  margin-top: 50px;
+  grid-template-columns: 1fr 2fr;
+  grid-template-rows: 100px;
+  grid-gap: 40px;
+}
+
+.contact_email {
+  font-size: 1.25rem;
+  border-left: 2px solid white;
+  padding-left: 15px;
+}
+.contact_email div:nth-child(1) {
+  text-transform: uppercase;
+}
+.contact_social {
+  font-size: 1.25rem;
+  border-left: 2px solid white;
+  padding-left: 15px;
+}
+.contact_social div:nth-child(1) {
+  text-transform: uppercase;
 }

@@ -5968,6 +5968,11 @@ grapheme-splitter@^1.0.4:
   resolved "https://registry.yarnpkg.com/grapheme-splitter/-/grapheme-splitter-1.0.4.tgz#9cf3a665c6247479896834af35cf1dbb4400767e"
   integrity sha512-bzh50DW9kTPM00T8y4o8vQg89Di9oLJVLW/KaOGIXJWP/iqCN6WKYkbNOF04vFLJhwcpYUh9ydh/+5vpOqV4YQ==
 
+gsap-trial@^3.11.4:
+  version "3.11.4"
+  resolved "https://registry.yarnpkg.com/gsap-trial/-/gsap-trial-3.11.4.tgz#ce46aa4ef4ac008f304b3773d5eb63926a0168a6"
+  integrity sha512-suiNsU6qQs6E1nDDMJb7VJNYXVzijMQE2bFCC4cwQAx+ycfM5jU1tp3R89FNQbz36BbMyc71N8jJOgGK71XJlA==
+
 gsap@^3.11.4:
   version "3.11.4"
   resolved "https://registry.yarnpkg.com/gsap/-/gsap-3.11.4.tgz#e6d972d3509a7431b86d81d6fc3bbeb6862e5ff1"

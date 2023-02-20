@@ -6,13 +6,11 @@ import {
   useTexture,
 } from "@react-three/drei";
 import { Canvas, useLoader } from "@react-three/fiber";
-import { useControls } from "leva";
 import React, { useEffect, Suspense, useRef } from "react";
 import * as THREE from "three";
 import { LinearEncoding, RepeatWrapping, TextureLoader } from "three";
 import { GLTFLoader, RGBELoader } from "three-stdlib";
 import "../Static/Contact.css";
-import gltfTexture from "../Static/hdr/aerodynamics_workshop_1k.hdr";
 
 function Ground() {
   const [roughmap, normalmap] = useLoader(TextureLoader, [
@@ -112,10 +110,35 @@ function Scene() {
     </Suspense>
   );
 }
+const Contact_Text = () => {
+  return (
+    <div className="Contact_text_top_div">
+      <section className="contact_section">
+        <div className="section_div">
+          <div className="split_div">contact</div>
+        </div>
+        <div className="quote">Stay hungry, Stay foolish</div>
+        <div className="contact_grid_box">
+          <div className="contact_email">
+            <div>E-Mail</div>
+            <div>aqs450@gmail.com</div>
+            <div>kk99270@naver.com</div>
+          </div>
+          <div className="contact_social">
+            <div>social</div>
+            <div>Github</div>
+          </div>
+        </div>
+      </section>
+    </div>
+  );
+};
+
 const Contact = () => {
   return (
     <div className="Contact_top_div">
       <Scene />
+      <Contact_Text />
     </div>
   );
 };
