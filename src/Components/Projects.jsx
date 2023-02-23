@@ -22,6 +22,9 @@ import { neonCursor } from "threejs-toys";
 import Contact from "./Contact";
 import S_Project_lowgif from "../Static/gif/S_Project_low.gif";
 import F_Project_lowgif from "../Static/gif/F_Project_low.gif";
+import Heffect from "../Static/img/Heffect.jpg";
+import mainhome from "../Static/img/mainhome.png";
+import hoverEffect from "hover-effect";
 
 const Projects = () => {
   useEffect(() => {
@@ -99,6 +102,33 @@ const Projects = () => {
       window.open("https://github.com/Ludobico/Project_Rebecca", "_blank");
     }
   };
+  const reactlink = () => {
+    window.open("https://ko.reactjs.org/", "_blank");
+  };
+  const nodejslink = () => {
+    window.open("https://nodejs.org/ko/", "_blank");
+  };
+  const mysqllink = () => {
+    window.open("https://www.mysql.com/", "_blank");
+  };
+  const pythonlink = () => {
+    window.open("https://www.python.org/", "_blank");
+  };
+  const fastapilink = () => {
+    window.open("https://fastapi.tiangolo.com/ko/", "_blank");
+  };
+  const mediapipelink = () => {
+    window.open("https://google.github.io/mediapipe/", "_blank");
+  };
+  const pytorchlink = () => {
+    window.open("https://pytorch.org/", "_blank");
+  };
+  const threelink = () => {
+    window.open("https://threejs.org/", "_blank");
+  };
+  const gsaplink = () => {
+    window.open("https://greensock.com/gsap/", "_blank");
+  };
 
   return (
     <>
@@ -123,13 +153,21 @@ const Projects = () => {
           </div>
           <div className="useSkill">
             <Fade bottom delay={500}>
-              <img className="useSkillIcon" src={react} />
+              <img className="useSkillIcon" src={react} onClick={reactlink} />
             </Fade>
             <Fade bottom delay={1000}>
-              <img className="useSkillIcon" src={nodejs} />
+              <img
+                className="useSkillIcon nodejs"
+                src={nodejs}
+                onClick={nodejslink}
+              />
             </Fade>
             <Fade bottom delay={1500}>
-              <img className="useSkillIcon" src={mysql} />
+              <img
+                className="useSkillIcon mysql"
+                src={mysql}
+                onClick={mysqllink}
+              />
             </Fade>
           </div>
         </div>
@@ -154,25 +192,37 @@ const Projects = () => {
           </div>
           <div className="useSkill">
             <Fade bottom delay={500}>
-              <img className="useSkillIcon" src={react} />
+              <img className="useSkillIcon" src={react} onClick={reactlink} />
             </Fade>
             <Fade bottom delay={1000}>
-              <img className="useSkillIcon" src={nodejs} />
+              <img className="useSkillIcon" src={nodejs} onClick={nodejslink} />
             </Fade>
             <Fade bottom delay={1500}>
-              <img className="useSkillIcon" src={mysql} />
+              <img className="useSkillIcon" src={mysql} onClick={mysqllink} />
             </Fade>
             <Fade bottom delay={2000}>
-              <img className="useSkillIcon" src={python} />
+              <img className="useSkillIcon" src={python} onClick={pythonlink} />
             </Fade>
             <Fade bottom delay={2500}>
-              <img className="useSkillIcon" src={fastapi} />
+              <img
+                className="useSkillIcon"
+                src={fastapi}
+                onClick={fastapilink}
+              />
             </Fade>
             <Fade bottom delay={3000}>
-              <img className="useSkillIcon" src={mediapipe} />
+              <img
+                className="useSkillIcon"
+                src={mediapipe}
+                onClick={mediapipelink}
+              />
             </Fade>
             <Fade bottom delay={3500}>
-              <img className="useSkillIcon" src={pytorch} />
+              <img
+                className="useSkillIcon"
+                src={pytorch}
+                onClick={pytorchlink}
+              />
             </Fade>
           </div>
         </div>
@@ -193,13 +243,13 @@ const Projects = () => {
           </div>
           <div className="useSkill">
             <Fade bottom delay={500}>
-              <img className="useSkillIcon" src={react} />
+              <img className="useSkillIcon" src={react} onClick={reactlink} />
             </Fade>
             <Fade bottom delay={1000}>
-              <img className="useSkillIcon" src={three} />
+              <img className="useSkillIcon" src={three} onClick={threelink} />
             </Fade>
             <Fade bottom delay={1500}>
-              <img className="useSkillIcon" src={gsapImg} />
+              <img className="useSkillIcon" src={gsapImg} onClick={gsaplink} />
             </Fade>
           </div>
         </div>
