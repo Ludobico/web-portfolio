@@ -11,7 +11,7 @@
     "@testing-library/user-event": "^13.2.1",
     "gsap": "^3.11.4",
     "gsap-trial": "^3.11.4",
-    "hover-effect": "^1.1.0",
+    "hover-effect": "^1.2.1",
     "leva": "^0.9.34",
     "postprocessing": "^6.29.3",
     "react": "^18.2.0",

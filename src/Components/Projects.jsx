@@ -133,6 +133,7 @@ const Projects = () => {
             </Fade>
           </div>
         </div>
+        <div className="skill_underline"></div>
         <div className="projects">
           <div className="query_desc">SoloFitness 2022.12</div>
           <div className="projects_img">
@@ -175,6 +176,7 @@ const Projects = () => {
             </Fade>
           </div>
         </div>
+        <div className="skill_underline"></div>
         <div className="projects T_project">
           <div className="query_desc">Project-Rebecca 2023.01</div>
           <div className="projects_img">
@@ -201,6 +203,7 @@ const Projects = () => {
             </Fade>
           </div>
         </div>
+        <div className="skill_underline"></div>
       </div>
     </>
   );
