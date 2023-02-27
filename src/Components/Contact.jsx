@@ -5,7 +5,7 @@ import {
   SpotLight,
   useTexture,
 } from "@react-three/drei";
-import { Canvas, useLoader } from "@react-three/fiber";
+import { Canvas, useFrame, useLoader } from "@react-three/fiber";
 import React, { useEffect, Suspense, useRef } from "react";
 import * as THREE from "three";
 import { LinearEncoding, RepeatWrapping, TextureLoader } from "three";
@@ -17,6 +17,8 @@ import gltfdisp from "../Static/img/Metal_Diamond_001_SD/Metal_Diamond_001_DISP.
 import gltfnormal from "../Static/img/Metal_Diamond_001_SD/Metal_Diamond_001_NORM.jpg";
 import gltfao from "../Static/img/Metal_Diamond_001_SD/Metal_Diamond_001_OCC.jpg";
 import gltfrough from "../Static/img/Metal_Diamond_001_SD/Metal_Diamond_001_ROUGH.jpg";
+import { Tween } from "gsap/gsap-core";
+import gsap from "gsap";
 
 function Ground() {
   const [roughmap, normalmap] = useLoader(TextureLoader, [
@@ -63,6 +65,16 @@ function Ground() {
 }
 
 function Floor() {
+  const spotlightRef = useRef();
+  // useEffect(() => {
+  //   gsap.to(spotlightRef.current, {
+  //     intensity: 15,
+  //     duration: 5,
+  //     repeat: -1,
+  //     yoyo: true,
+  //   });
+  // });
+
   return (
     <>
       <OrbitControls
@@ -75,6 +87,7 @@ function Floor() {
       <PerspectiveCamera makeDefault fov={50} position={[3, 2, 5]} />
       <color args={[0, 0, 0]} attach="background" />
       <spotLight
+        ref={spotlightRef}
         color={[1, 0.25, 0.7]}
         intensity={1.5}
         angle={0.6}
