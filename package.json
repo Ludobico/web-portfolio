@@ -20,6 +20,7 @@
     "react-router-dom": "^6.8.1",
     "react-scripts": "5.0.1",
     "react-text-transition": "^3.0.2",
+    "react-transition-group": "^4.4.5",
     "react-typewriter-effect": "^1.1.0",
     "smooth-scrollbar": "^8.8.1",
     "smooth-scrollbar-react": "^2.4.1",
