@@ -20,6 +20,10 @@ import gltfrough from "../Static/img/Metal_Diamond_001_SD/Metal_Diamond_001_ROUG
 import { Tween } from "gsap/gsap-core";
 import gsap from "gsap";
 
+/**
+ *
+ * @returns planegeometry로 바닥같은 객체를 생성하고 MeshReflectorMaterial을 사용하여 반사효과를 주었습니다. 여기에 텍스쳐를 설정하여 더욱 바닥같은 느낌을 주었습니다.
+ */
 function Ground() {
   const [roughmap, normalmap] = useLoader(TextureLoader, [
     process.env.PUBLIC_URL + "floor_texture/terrain_roughness.jpg",
@@ -64,6 +68,10 @@ function Ground() {
   );
 }
 
+/**
+ *
+ * @returns 카메라의 위치와 광원을 설정하였습니다.
+ */
 function Floor() {
   const spotlightRef = useRef();
   // useEffect(() => {
@@ -110,6 +118,10 @@ function Floor() {
   );
 }
 
+/**
+ *
+ * @returns GLTFModel을 불러와서 바닥위에 조각상을 배치시켰고, matalness와 roughness를 설정함으로써 폴리곤보단 금속재질의 조각상으로 재질을 변경하였습니다.
+ */
 const GLTFModel = () => {
   const ref = useRef();
   const gltf = useLoader(GLTFLoader, "/elven_ranger_statue/scene.gltf");
@@ -147,6 +159,11 @@ function Scene() {
     </Suspense>
   );
 }
+
+/**
+ *
+ * @returns Threejs를 사용하지않은 일반적인 html 컴포넌트입니다.
+ */
 const Contact_Text = () => {
   const link_1 = () => {
     window.open("https://github.com/Ludobico", "_blank");
