@@ -26,6 +26,10 @@ import { VMlightPass_C } from "./VMlightPass_C";
 import { UnrealBloomPass } from "three-stdlib";
 import Projects from "../Projects";
 
+/**
+ *
+ * @returns 광원의 position을 마우스 위치로 설정하는 함수입니다.
+ */
 function Light() {
   const lightRef = useRef();
 
@@ -46,6 +50,10 @@ function Light() {
   );
 }
 
+/**
+ *
+ * @returns 광원에 쉐이더 효과를 줘서 좀 더 태양빛같은 느낌을 냈으나 렉이 심하게 걸려 사용하지는 못했습니다.
+ */
 function MouseSpot() {
   const { viewport } = useThree();
   const vertexShader = `
@@ -111,6 +119,10 @@ function MouseSpot() {
   );
 }
 
+/**
+ *
+ * @returns 가운데에 있는 원입니다. Light 함수로 인해 마우스가 움직일때마다 빛이 이동하는걸 확인할 수 있습니다.
+ */
 function CenterMesh() {
   return (
     <mesh position={[0, 0, 0]}>
@@ -120,6 +132,11 @@ function CenterMesh() {
   );
 }
 
+/**
+ *
+ * @param {*} count 갯수를 설정하는 파라미터입니다.
+ * @returns 마우스를 기준으로 떠나니는 Swarm입니다. position 위치는 Factors들에 의해 결정됩니다.
+ */
 function Swarm({ count }) {
   const mesh = useRef();
   const light = useRef();
@@ -227,6 +244,10 @@ function Swarm({ count }) {
   );
 }
 
+/**
+ *
+ * @returns 가운데 원, 빛, Swarm을 하나의 Canvas 컴포넌트 안에 넣는 함수입니다.
+ */
 const Scene = () => {
   return (
     <>
@@ -240,6 +261,10 @@ const Scene = () => {
   );
 };
 
+/**
+ *
+ * @returns Canvas 와 Html 을 합쳤습니다.
+ */
 const ProjectInterface = () => {
   return (
     <>

@@ -7,6 +7,10 @@ import { ScrollTrigger } from "gsap/ScrollTrigger";
 import { useEffect } from "react";
 import Slide from "react-reveal/Slide";
 
+/**
+ *
+ * @returns 프로젝트 문자열 컴포넌트입니다.
+ */
 const Project = () => {
   useEffect(() => {
     const reveal = gsap.utils.toArray(".project_reveal");
